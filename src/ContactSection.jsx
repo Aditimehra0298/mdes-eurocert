@@ -32,7 +32,7 @@ const ContactSection = () => {
           {/* Image Column */}
           <div className="w-full">
             <img 
-              src="public/unnamed (4).jpg"
+              src="/unnamed (4).jpg"
               alt="A team of professionals in a meeting discussing data on a futuristic screen."
               className="w-full h-auto rounded-2xl shadow-2xl shadow-blue-900/20 object-cover"
             />

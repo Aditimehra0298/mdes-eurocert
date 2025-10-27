@@ -13,7 +13,7 @@ const IntegrationSection = () => {
         {/* Certification Badges with Arrows */}
         <div className="relative w-full max-w-4xl mb-8 mx-auto">
           {/* SVG Arrows connecting badges */}
-          <svg className="absolute top-0 left-0 w-full h-full pointer-events-none hidden md:block" style={{zIndex: 0}}>
+          <svg className="absolute top-0 left-0 w-full h-full pointer-events-none hidden md:block" viewBox="0 0 100 100" preserveAspectRatio="none" style={{zIndex: 0}}>
             <defs>
               <marker
                 id="arrowhead"
@@ -27,13 +27,13 @@ const IntegrationSection = () => {
               </marker>
             </defs>
             {/* Arrow from 9001 to 14001 */}
-            <path d="M 20% 50% L 30% 50%" stroke="rgb(59 130 246 / 0.4)" strokeWidth="2" markerEnd="url(#arrowhead)" fill="none"/>
+            <line x1="20" y1="50" x2="30" y2="50" stroke="rgb(59 130 246 / 0.4)" strokeWidth="0.5" markerEnd="url(#arrowhead)"/>
             {/* Arrow from 14001 to 45001 */}
-            <path d="M 38% 50% L 48% 50%" stroke="rgb(59 130 246 / 0.4)" strokeWidth="2" markerEnd="url(#arrowhead)" fill="none"/>
+            <line x1="38" y1="50" x2="48" y2="50" stroke="rgb(59 130 246 / 0.4)" strokeWidth="0.5" markerEnd="url(#arrowhead)"/>
             {/* Arrow from 45001 to 60001 */}
-            <path d="M 56% 50% L 66% 50%" stroke="rgb(59 130 246 / 0.4)" strokeWidth="2" markerEnd="url(#arrowhead)" fill="none"/>
+            <line x1="56" y1="50" x2="66" y2="50" stroke="rgb(59 130 246 / 0.4)" strokeWidth="0.5" markerEnd="url(#arrowhead)"/>
             {/* Arrow from 60001 to CE */}
-            <path d="M 74% 50% L 84% 50%" stroke="rgb(59 130 246 / 0.4)" strokeWidth="2" markerEnd="url(#arrowhead)" fill="none"/>
+            <line x1="74" y1="50" x2="84" y2="50" stroke="rgb(59 130 246 / 0.4)" strokeWidth="0.5" markerEnd="url(#arrowhead)"/>
           </svg>
 
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 relative" style={{zIndex: 1}}>
