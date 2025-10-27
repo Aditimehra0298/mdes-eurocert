@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './HeroSection.css';
 
 const HeroSection = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -12,10 +11,6 @@ const HeroSection = () => {
     company: '',
     description: ''
   });
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -92,107 +87,22 @@ const HeroSection = () => {
               />
             </a>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={toggleMobileMenu}
-              className="md:hidden rounded-lg p-2 text-gray-400 hover:text-white hover:bg-gray-700 transition-colors"
+            {/* Contact Us Button */}
+            <a
+              href="#"
+              className="glowing-pill bg-gray-900 hover:bg-gray-800 transition-all flex items-center justify-center gap-3 py-2 px-4 border-gray-700"
             >
-              {!isMobileMenuOpen ? (
+              <div className="bg-white rounded-full p-1.5">
                 <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  ></path>
-                </svg>
-              ) : (
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  ></path>
-                </svg>
-              )}
-            </button>
-
-            {/* Menu container for links and button */}
-            <div
-              className={`${
-                isMobileMenuOpen ? 'flex' : 'hidden'
-              } md:flex md:items-center md:gap-8 w-full md:w-auto`}
-            >
-              {/* Nav Links */}
-              <div className="flex flex-col md:flex-row items-center gap-6 mt-4 md:mt-0 w-full md:w-auto">
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors py-2 md:py-0"
-                >
-                  Home
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors py-2 md:py-0"
-                >
-                  About
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors py-2 md:py-0"
-                >
-                  Integrations
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors py-2 md:py-0"
-                >
-                  Features
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors py-2 md:py-0"
-                >
-                  Pricing
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors py-2 md:py-0"
-                >
-                  Blog
-                </a>
+                  width="16"
+                  height="16"
+                  fill="black"
+                  viewBox="0 0 16 16"
+                ></svg>
               </div>
-
-              {/* Contact Us Button */}
-              <a
-                href="#"
-                className="glowing-pill bg-gray-900 hover:bg-gray-800 transition-all flex items-center justify-center gap-3 py-2 px-4 border-gray-700 mt-4 md:mt-0 w-full sm:w-auto"
-              >
-                <div className="bg-white rounded-full p-1.5">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="black"
-                    viewBox="0 0 16 16"
-                  ></svg>
-                </div>
-                <span className="text-white font-medium">Contact Us</span>
-              </a>
-            </div>
+              <span className="text-white font-medium">Contact Us</span>
+            </a>
           </nav>
         </header>
 
