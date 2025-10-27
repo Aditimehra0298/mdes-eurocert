@@ -88,8 +88,8 @@ const HeroSection = () => {
             </a>
 
             {/* Contact Us Button */}
-            <a
-              href="#"
+            <button
+              onClick={openModal}
               className="glowing-pill bg-gray-900 hover:bg-gray-800 transition-all flex items-center justify-center gap-3 py-2 px-4 border-gray-700"
             >
               <div className="bg-white rounded-full p-1.5">
@@ -102,7 +102,7 @@ const HeroSection = () => {
                 ></svg>
               </div>
               <span className="text-white font-medium">Contact Us</span>
-            </a>
+            </button>
           </nav>
         </header>
 
