@@ -41,7 +41,7 @@
 .footer-logo {
   height: 60px;
   width: auto;
-  object-contain;
+  object-fit: contain;
   filter: brightness(1.1);
 }
 
