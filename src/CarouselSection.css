@@ -1,0 +1,161 @@
+/* Carousel Section Styles */
+.carousel-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #030712;
+  padding: 3rem 1rem;
+}
+
+.carousel-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.carousel-main-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 2rem;
+  background: linear-gradient(to right, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 768px) {
+  .carousel-main-title {
+    font-size: 1.8rem;
+  }
+}
+
+.carousel {
+  --items: 5;
+  --carousel-duration: 40s;
+  --carousel-width: min(80vw, 1200px);
+  --carousel-item-width: 280px;
+  --carousel-item-height: 280px;
+  --carousel-item-gap: 2rem;
+  --clr-cta: rgb(59, 130, 246);
+
+  position: relative;
+  width: var(--carousel-width);
+  height: var(--carousel-item-height);
+  overflow: clip;
+  margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+  .carousel {
+    --carousel-duration: 30s;
+  }
+}
+
+.carousel[mask] {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10% 90%,
+    transparent
+  );
+}
+
+.carousel:hover > article {
+  animation-play-state: paused;
+}
+
+.carousel > article {
+  position: absolute;
+  top: 0;
+  left: calc(100% + var(--carousel-item-gap));
+  width: var(--carousel-item-width);
+  height: var(--carousel-item-height);
+  display: grid;
+  grid-template-rows: 120px auto 1fr;
+  gap: 0.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0 0 1rem 0;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  
+  will-change: transform;
+  animation-name: marquee;
+  animation-duration: var(--carousel-duration);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: calc(
+    var(--carousel-duration) / var(--items) * 1 * var(--i) * -1
+  );
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.carousel > article > *:not(img) {
+  padding: 0 1rem;
+}
+
+.carousel > article > div {
+  grid-row: span 2;
+  display: grid;
+  grid-template-rows: subgrid;
+  font-size: 0.75rem;
+}
+
+.carousel > article h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  padding-block: 0.5rem 0.25rem;
+  margin: 0;
+  color: white;
+}
+
+.carousel > article h2 .emoji {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.carousel > article p {
+  margin: 0;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.carousel > article a {
+  text-decoration: none;
+  text-transform: lowercase;
+  border: 1px solid var(--clr-cta);
+  color: white;
+  border-radius: 3px;
+  padding: 0.25rem 0.5rem;
+  place-self: start;
+  transition: 150ms ease-in-out;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.carousel > article a:hover,
+.carousel > article a:focus-visible {
+  background-color: var(--clr-cta);
+  color: white;
+  outline: none;
+}
+
+@keyframes marquee {
+  100% {
+    transform: translateX(
+      calc(
+        (var(--items) * (var(--carousel-item-width) + var(--carousel-item-gap))) *
+          -1
+      )
+    );
+  }
+}
+

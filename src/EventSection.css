@@ -1,0 +1,680 @@
+/* Event Section Styles */
+.event-section {
+  background: #0b0f19;
+  padding: 3rem 1rem;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .event-section {
+    padding: 4rem 1rem;
+  }
+}
+
+.event-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.event-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .event-header {
+    margin-bottom: 3rem;
+  }
+}
+
+.event-subtitle {
+  color: #3b82f6;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .event-subtitle {
+    font-size: 1rem;
+  }
+}
+
+.event-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(to right, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.3;
+}
+
+@media (min-width: 640px) {
+  .event-title {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .event-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.event-description {
+  font-size: 0.875rem;
+  color: #d1d5db;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .event-description {
+    font-size: 1rem;
+  }
+}
+
+.event-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .event-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Features Column */
+.features-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: all 0.3s;
+}
+
+@media (min-width: 768px) {
+  .feature-card {
+    padding: 2rem;
+  }
+}
+
+.feature-card:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.feature-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #3b82f6;
+  margin-bottom: 0.4rem;
+}
+
+@media (min-width: 768px) {
+  .feature-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.feature-description {
+  color: #d1d5db;
+  line-height: 1.6;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .feature-description {
+    font-size: 0.95rem;
+  }
+}
+
+/* Booking Column */
+.booking-column {
+  display: flex;
+  justify-content: center;
+}
+
+.booking-card {
+  background: rgba(17, 24, 39, 0.9);
+  border: 2px solid rgba(59, 130, 246, 0.4);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
+}
+
+@media (min-width: 768px) {
+  .booking-card {
+    border-radius: 16px;
+    padding: 2.5rem;
+  }
+}
+
+.booking-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .booking-title {
+    font-size: 2rem;
+  }
+}
+
+.booking-subtitle {
+  text-align: center;
+  color: #d1d5db;
+  font-style: italic;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .booking-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Steps Indicator */
+.steps-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.steps-indicator::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: rgba(59, 130, 246, 0.2);
+  z-index: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.1);
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #999;
+  transition: all 0.3s;
+}
+
+@media (min-width: 768px) {
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+.step.active .step-number {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border-color: #3b82f6;
+  color: white;
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}
+
+.step-label {
+  font-size: 0.65rem;
+  color: #999;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .step-label {
+    font-size: 0.75rem;
+  }
+}
+
+.step.active .step-label {
+  color: #3b82f6;
+}
+
+/* Step Content */
+.step-content {
+  min-height: 300px;
+}
+
+@media (min-width: 768px) {
+  .step-content {
+    min-height: 400px;
+  }
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  transition: all 0.3s;
+}
+
+.back-button:hover {
+  color: #06b6d4;
+}
+
+.step-title {
+  font-size: 1.5rem;
+  color: #3b82f6;
+  margin-bottom: 1.5rem;
+}
+
+/* Calendar */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-header h4 {
+  font-size: 1.125rem;
+  color: #3b82f6;
+}
+
+@media (min-width: 768px) {
+  .calendar-header h4 {
+    font-size: 1.3rem;
+  }
+}
+
+.calendar-nav {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #3b82f6;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+}
+
+@media (min-width: 768px) {
+  .calendar-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
+.calendar-nav:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: #3b82f6;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+}
+
+@media (min-width: 640px) {
+  .calendar-grid {
+    gap: 0.375rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .calendar-grid {
+    gap: 0.5rem;
+  }
+}
+
+.calendar-day-header {
+  text-align: center;
+  color: #3b82f6;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.25rem;
+}
+
+@media (min-width: 640px) {
+  .calendar-day-header {
+    font-size: 0.75rem;
+    padding: 0.375rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .calendar-day-header {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: #666;
+  font-weight: 500;
+  font-size: 0.75rem;
+  cursor: not-allowed;
+  transition: all 0.3s;
+}
+
+@media (min-width: 640px) {
+  .calendar-day {
+    font-size: 0.875rem;
+    border-radius: 8px;
+  }
+}
+
+@media (min-width: 768px) {
+  .calendar-day {
+    font-size: 1rem;
+  }
+}
+
+.calendar-day.event-day {
+  background: rgba(59, 130, 246, 0.1);
+  color: white;
+  cursor: pointer;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.calendar-day.event-day:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: #3b82f6;
+  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.2);
+}
+
+.calendar-day.selected {
+  background: linear-gradient(135deg, #3b82f6, #2563eb) !important;
+  border-color: #3b82f6 !important;
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Time Grid */
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .time-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .time-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+}
+
+.time-slot {
+  padding: 0.75rem 0.5rem;
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .time-slot {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+.time-slot:hover {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: #3b82f6;
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
+}
+
+.time-slot.selected {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border-color: #3b82f6;
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Role Grid */
+.role-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .role-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+.role-button {
+  padding: 1rem 0.75rem;
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .role-button {
+    padding: 1.5rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+.role-button:hover {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
+}
+
+/* Form Inputs */
+.form-input {
+  width: 100%;
+  padding: 0.75rem 0.875rem;
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 8px;
+  color: white;
+  font-size: 0.875rem;
+  margin-bottom: 0.875rem;
+  transition: all 0.3s;
+}
+
+@media (min-width: 768px) {
+  .form-input {
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+textarea.form-input {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.875rem;
+  background: linear-gradient(to right, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .submit-button {
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+  }
+}
+
+.submit-button:hover {
+  background: linear-gradient(to right, #2563eb, #1d4ed8);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+}
+
+.form-note {
+  font-size: 0.75rem;
+  color: #999;
+  text-align: center;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* Thank You Message */
+.thank-you-message {
+  text-align: center;
+  padding: 2rem;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+  font-weight: bold;
+}
+
+.thank-you-message h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.thank-you-message p {
+  color: #d1d5db;
+  margin-bottom: 1rem;
+}
+
+.appointment-summary {
+  background: rgba(59, 130, 246, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  margin: 1.5rem 0;
+}
+
+.appointment-summary p {
+  margin: 0.5rem 0;
+  color: white;
+}
+
+.reset-button {
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  border-radius: 8px;
+  color: #3b82f6;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.reset-button:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: #3b82f6;
+}

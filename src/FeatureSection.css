@@ -1,0 +1,27 @@
+/* Keyframes for the mobile scroll */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Animation utility class - only on mobile */
+@media (max-width: 767px) {
+  .animate-scroll {
+    animation: scroll 15s linear infinite;
+  }
+}
+
+/* On desktop, stop the animation */
+@media (min-width: 768px) {
+  .md\:animate-none {
+    animation: none;
+  }
+  .md\:w-auto {
+    width: auto;
+  }
+}
+

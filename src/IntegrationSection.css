@@ -1,0 +1,12 @@
+/* Line styles for the integration diagram */
+.line {
+  stroke: rgb(56 189 248 / 0.4); /* sky-500 with opacity */
+  stroke-width: 1.5;
+}
+
+.drop-line {
+  stroke: rgb(56 189 248 / 0.6); /* sky-500 with opacity */
+  stroke-width: 1.5;
+  marker-end: url(#arrow);
+}
+
