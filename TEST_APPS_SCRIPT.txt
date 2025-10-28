@@ -1,0 +1,77 @@
+===========================================
+SIMPLE TEST FOR GOOGLE APPS SCRIPT
+===========================================
+
+Copy this SIMPLE test script into your Apps Script:
+
+function testSheetAccess() {
+  // Test 1: Can we access the spreadsheet?
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  Logger.log("✅ Spreadsheet Name: " + ss.getName());
+  
+  // Test 2: List all sheet tabs
+  const sheets = ss.getSheets();
+  Logger.log("📋 Found " + sheets.length + " sheets:");
+  sheets.forEach(sheet => {
+    Logger.log("  - " + sheet.getName());
+  });
+  
+  // Test 3: Try to find "Consultation Bookings" sheet
+  const consultationSheet = ss.getSheetByName('Consultation Bookings');
+  if (consultationSheet) {
+    Logger.log("✅ Found 'Consultation Bookings' sheet");
+    
+    // Test 4: Try to write a test row
+    consultationSheet.appendRow([
+      new Date(),
+      "TEST USER",
+      "test@email.com",
+      "+919999999999",
+      "TEST COMPANY",
+      "This is a test from Apps Script"
+    ]);
+    Logger.log("✅ Test row written successfully!");
+    
+  } else {
+    Logger.log("❌ ERROR: Cannot find 'Consultation Bookings' sheet");
+    Logger.log("⚠️  Sheet names are case-sensitive!");
+    Logger.log("⚠️  Make sure tab is named exactly: 'Consultation Bookings'");
+  }
+  
+  // Test 5: Try to find "Event Registrations" sheet
+  const eventSheet = ss.getSheetByName('Event Registrations');
+  if (eventSheet) {
+    Logger.log("✅ Found 'Event Registrations' sheet");
+  } else {
+    Logger.log("❌ ERROR: Cannot find 'Event Registrations' sheet");
+  }
+}
+
+===========================================
+HOW TO RUN THIS TEST:
+===========================================
+
+1. Open your Google Sheet
+2. Go to Extensions → Apps Script
+3. Create a new function or replace existing code temporarily
+4. Paste the testSheetAccess() function above
+5. Click Run (▶️ button)
+6. After it runs, click "Execution log" button (looks like a piece of paper)
+7. Read the logs - they will tell you exactly what's wrong!
+
+===========================================
+WHAT THE LOGS WILL TELL YOU:
+===========================================
+
+✅ If you see "Found 'Consultation Bookings' sheet" and "Test row written successfully!"
+   → Your sheet setup is correct
+   → The problem is in the doPost() function or data parsing
+
+❌ If you see "Cannot find 'Consultation Bookings' sheet"
+   → Your sheet tab name is wrong
+   → Rename the tab to exactly: "Consultation Bookings"
+
+📋 The log will list all your sheet names so you can see exactly what they are called
+
+===========================================
+
