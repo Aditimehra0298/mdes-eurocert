@@ -4,6 +4,8 @@ import { GOOGLE_SCRIPT_URL } from './config';
 
 const EventSection = () => {
   const [currentStep, setCurrentStep] = useState(1);
+  const [currentMonth, setCurrentMonth] = useState(11); // December (0-indexed)
+  const [currentYear, setCurrentYear] = useState(2025);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,6 +17,35 @@ const EventSection = () => {
   });
   
   const [submitted, setSubmitted] = useState(false);
+
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
+                      'July', 'August', 'September', 'October', 'November', 'December'];
+
+  const getDaysInMonth = (month, year) => {
+    return new Date(year, month + 1, 0).getDate();
+  };
+
+  const getFirstDayOfMonth = (month, year) => {
+    return new Date(year, month, 1).getDay();
+  };
+
+  const prevMonth = () => {
+    if (currentMonth === 0) {
+      setCurrentMonth(11);
+      setCurrentYear(currentYear - 1);
+    } else {
+      setCurrentMonth(currentMonth - 1);
+    }
+  };
+
+  const nextMonth = () => {
+    if (currentMonth === 11) {
+      setCurrentMonth(0);
+      setCurrentYear(currentYear + 1);
+    } else {
+      setCurrentMonth(currentMonth + 1);
+    }
+  };
 
   const handleChange = (e) => {
     setFormData({
@@ -76,7 +107,14 @@ const EventSection = () => {
   };
 
   const selectDate = (date) => {
-    setFormData({ ...formData, date });
+    // Format date as "Month Day, Year" for display
+    const dateObj = new Date(date + 'T00:00:00'); // Add time to avoid timezone issues
+    const formattedDate = dateObj.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+    setFormData({ ...formData, date: formattedDate });
     nextStep();
   };
 
@@ -162,9 +200,9 @@ const EventSection = () => {
                   {currentStep === 1 && (
                     <div className="step-content">
                       <div className="calendar-header">
-                        <button onClick={prevStep} className="calendar-nav">←</button>
-                        <h4>December 2025</h4>
-                        <button onClick={nextStep} className="calendar-nav">→</button>
+                        <button onClick={prevMonth} className="calendar-nav">←</button>
+                        <h4>{monthNames[currentMonth]} {currentYear}</h4>
+                        <button onClick={nextMonth} className="calendar-nav">→</button>
                       </div>
                       <div className="calendar-grid">
                         <div className="calendar-day-header">Sun</div>
@@ -175,19 +213,44 @@ const EventSection = () => {
                         <div className="calendar-day-header">Fri</div>
                         <div className="calendar-day-header">Sat</div>
                         
-                        {Array.from({ length: 42 }, (_, i) => {
-                          const day = i; // Dec 2025 starts on Monday
-                          const isEventDay = day >= 1 && day <= 31;
-                          return (
-                            <div
-                              key={i}
-                              className={`calendar-day ${isEventDay ? 'event-day' : ''} ${formData.date === `2025-12-${day}` ? 'selected' : ''}`}
-                              onClick={() => isEventDay && selectDate(`2025-12-${day}`)}
-                            >
-                              {day > 0 && day <= 31 ? day : ''}
-                            </div>
-                          );
-                        })}
+                        {(() => {
+                          const daysInMonth = getDaysInMonth(currentMonth, currentYear);
+                          const firstDay = getFirstDayOfMonth(currentMonth, currentYear);
+                          const calendarDays = [];
+                          
+                          // Add empty cells for days before the first day of the month
+                          for (let i = 0; i < firstDay; i++) {
+                            calendarDays.push(
+                              <div key={`empty-${i}`} className="calendar-day"></div>
+                            );
+                          }
+                          
+                          // Add all days of the month
+                          for (let day = 1; day <= daysInMonth; day++) {
+                            const dateString = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                            
+                            // Check if this date is selected by comparing formatted dates
+                            const dateObj = new Date(dateString + 'T00:00:00');
+                            const formattedDate = dateObj.toLocaleDateString('en-US', { 
+                              year: 'numeric', 
+                              month: 'long', 
+                              day: 'numeric' 
+                            });
+                            const isSelected = formData.date === formattedDate;
+                            
+                            calendarDays.push(
+                              <div
+                                key={day}
+                                className={`calendar-day event-day ${isSelected ? 'selected' : ''}`}
+                                onClick={() => selectDate(dateString)}
+                              >
+                                {day}
+                              </div>
+                            );
+                          }
+                          
+                          return calendarDays;
+                        })()}
                       </div>
                     </div>
                   )}
