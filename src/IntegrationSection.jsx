@@ -7,7 +7,7 @@ const IntegrationSection = () => {
       {/* Heading and Subheading */}
       <div className="text-center max-w-5xl mx-auto z-10">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">
-          🏆 Certifications That Make You Global & Green
+          🏆 Our Certifications That Make You Global & Green
         </h1>
 
         {/* Certification Badges with Arrows */}

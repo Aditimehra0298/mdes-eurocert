@@ -156,13 +156,13 @@ const HeroSection = () => {
           
           {/* Top Badges */}
           <div className="hero-badges-container flex flex-wrap items-center justify-center gap-3 mb-8">
-            <span className="hero-badge px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full text-white text-sm md:text-base font-bold italic shadow-lg">
+            <span className="hero-badge px-6 py-3 bg-transparent border-2 border-blue-400 text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600 hover:border-transparent hover:scale-105 transition-all duration-300 rounded-full text-sm md:text-base font-bold italic shadow-lg cursor-pointer">
               Machinery Design Excellence
             </span>
-            <span className="hero-badge px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full text-white text-sm md:text-base font-bold italic shadow-lg">
+            <span className="hero-badge px-6 py-3 bg-transparent border-2 border-blue-500 text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-700 hover:border-transparent hover:scale-105 transition-all duration-300 rounded-full text-sm md:text-base font-bold italic shadow-lg cursor-pointer">
               Principal Sponsor-EUROCERT
             </span>
-            <span className="hero-badge px-6 py-3 bg-gradient-to-r from-cyan-400 to-cyan-500 rounded-full text-white text-sm md:text-base font-bold italic shadow-lg">
+            <span className="hero-badge px-6 py-3 bg-transparent border-2 border-cyan-400 text-white hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 hover:border-transparent hover:scale-105 transition-all duration-300 rounded-full text-sm md:text-base font-bold italic shadow-lg cursor-pointer">
               ITC (India)-Excellence Partner
             </span>
           </div>
@@ -207,13 +207,13 @@ const HeroSection = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mt-8 md:mt-12 lg:mt-16 w-full px-2">
             {/* Primary CTA */}
-            <button onClick={openModal} className="flex items-center justify-center gap-2 md:gap-3 bg-blue-600 hover:bg-blue-700 transition-colors rounded-full py-2.5 px-5 md:py-3 md:px-6 lg:py-4 lg:px-8 font-semibold text-sm md:text-base lg:text-lg w-full sm:w-auto">
+            <button onClick={openModal} className="flex items-center justify-center gap-2 md:gap-3 bg-transparent border-2 border-blue-500 text-white hover:bg-blue-600 hover:border-blue-600 hover:scale-105 active:scale-95 transition-all duration-300 rounded-full py-2.5 px-5 md:py-3 md:px-6 lg:py-4 lg:px-8 font-semibold text-sm md:text-base lg:text-lg w-full sm:w-auto cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
                 fill="currentColor"
-                className="bi bi-search md:w-5 md:h-5"
+                className="bi bi-search md:w-5 md:h-5 transition-transform duration-300"
                 viewBox="0 0 16 16"
               >
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
@@ -222,18 +222,18 @@ const HeroSection = () => {
             </button>
 
             {/* Secondary CTA */}
-            <a href="#event-section" className="cta-secondary-pill flex items-center justify-center gap-2 md:gap-3 py-2.5 px-5 md:py-3 md:px-6 lg:py-4 lg:px-8 font-semibold text-sm md:text-base lg:text-lg text-gray-200 w-full sm:w-auto no-underline">
+            <a href="#event-section" className="cta-secondary-pill flex items-center justify-center gap-2 md:gap-3 py-2.5 px-5 md:py-3 md:px-6 lg:py-4 lg:px-8 font-semibold text-sm md:text-base lg:text-lg text-gray-200 w-full sm:w-auto no-underline hover:bg-blue-600 hover:text-white hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
                 fill="currentColor"
-                className="bi bi-lightning-charge-fill md:w-5 md:h-5"
+                className="bi bi-lightning-charge-fill md:w-5 md:h-5 transition-transform duration-300 group-hover:rotate-12"
                 viewBox="0 0 16 16"
               >
                 <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.032z" />
               </svg>
-              <span>Visit Our Stall at ENGIMACH</span>
+              <span>Book Appointment with us at ENGIMACH</span>
             </a>
           </div>
         </main>

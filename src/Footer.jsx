@@ -29,7 +29,7 @@ const Footer = () => {
               </a>
               <span className="footer-divider">|</span>
               <a href="tel:+91" className="footer-link">
-                📞 +91-[Insert Number]
+                📞 +91-9056742781
               </a>
             </div>
           </div>

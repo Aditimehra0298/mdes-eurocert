@@ -112,7 +112,7 @@ const EventSection = () => {
           <p className="event-subtitle">🗓 Event Details – Mark Your Calendar</p>
           <h2 className="event-title">Visit EUROCERT at ENGIMACH 2025</h2>
           <p className="event-description">
-            📍 ENGIMACH 2025 Exhibition | Gandhinagar, Gujarat, India<br/>
+            📍 ENGIMACH 2025 Exhibition | Stall (12A) | Gandhinagar, Gujarat, India<br/>
             📅 December 3-7, 2025 | 🕒 9:00 AM - 6:00 PM<br/>
             Where Machinery Meets Global & Green Standards!
           </p>
