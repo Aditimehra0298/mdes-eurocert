@@ -11,6 +11,6 @@ export const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzawCP
 // 4. Replace 'YOUR_SCRIPT_URL_HERE' above with your URL
 // 5. Save this file and rebuild your app
 
-// Email notification recipient (configured in Google Apps Script)
-export const NOTIFICATION_EMAIL = 'aditimehra0298@gmail.com';
+// Email notification recipients (configured in Google Apps Script)
+export const NOTIFICATION_EMAILS = ['aditimehra0298@gmail.com', 'damnart.seo@gmail.com', 'bdm@eurocert.in'];
 
