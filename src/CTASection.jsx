@@ -42,6 +42,10 @@ const CTASection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    console.log('🔵 CTA Form - Starting submission...');
+    console.log('📝 Form data:', formData);
+    console.log('🔗 Script URL:', GOOGLE_SCRIPT_URL);
+    
     try {
       // Prepare data for Google Sheets
       const submissionData = {
@@ -49,6 +53,8 @@ const CTASection = () => {
         ...formData,
         timestamp: new Date().toISOString()
       };
+      
+      console.log('📤 Sending data:', submissionData);
       
       // Send to Google Sheets via Apps Script
       const response = await fetch(GOOGLE_SCRIPT_URL, {
@@ -60,10 +66,12 @@ const CTASection = () => {
         body: JSON.stringify(submissionData)
       });
       
-      console.log('Form submitted successfully:', formData);
+      console.log('✅ CTA Form - Request sent successfully!');
+      console.log('📊 Check your Google Sheet for new entry');
       setIsSubmitted(true);
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('❌ CTA Form - Error:', error);
+      console.error('Error details:', error.message);
       // Still show success message to user (no-cors mode doesn't return response)
       setIsSubmitted(true);
     }
