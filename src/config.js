@@ -2,7 +2,7 @@
 // After deploying your Google Apps Script, paste the Web App URL here
 // Example: https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec
 
-export const GOOGLE_SCRIPT_URL = 'YOUR_SCRIPT_URL_HERE';
+export const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzawCPj6HOYWfYkW6I8I7PTyNh9Cm-8HcPXh3j3WvYSC4UKtFsqSDKdsm0btwEt-fKd/exec';
 
 // Instructions:
 // 1. Follow the setup guide in GOOGLE_SHEETS_SETUP.md
