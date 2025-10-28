@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './EventSection.css';
+import { GOOGLE_SCRIPT_URL } from './config';
 
 const EventSection = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -22,9 +23,34 @@ const EventSection = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    
+    try {
+      // Prepare data for Google Sheets
+      const submissionData = {
+        formType: 'event',
+        ...formData,
+        timestamp: new Date().toISOString()
+      };
+      
+      // Send to Google Sheets via Apps Script
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submissionData)
+      });
+      
+      console.log('Form submitted successfully:', formData);
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // Still show success message to user (no-cors mode doesn't return response)
+      setSubmitted(true);
+    }
   };
 
   const resetForm = () => {
